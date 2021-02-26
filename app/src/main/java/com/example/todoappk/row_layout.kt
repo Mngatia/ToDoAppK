@@ -1,12 +1,11 @@
- package com.example.todoappk
+package com.example.todoappk
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-//import kotlinx.parcelize.Parcelize
 
-class MainActivity : AppCompatActivity() {
+class row_layout : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_row_layout)
     }
 }
