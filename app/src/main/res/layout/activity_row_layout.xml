@@ -8,7 +8,7 @@
     <data>
         <variable
             name="toDoDtata"
-            type="com.example.todoappk.data.models.ToDoData" />
+            type="com.example.todoappk.models.ToDoData" />
 
     </data>
 
