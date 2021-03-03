@@ -1,16 +1,16 @@
-package viewmodels
+package viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.todoappk.ToDoDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import models.ToDoData
 import repository.ToDoRepository
-import java.time.temporal.TemporalQuery
 
-class ToDoViewModels (application: Application): AndroidViewModel(application){
+class ToDoViewModel (application: Application): AndroidViewModel(application){
 
     private val toDoDao = ToDoDatabase.getDatabase(application).todoDao()
     private val repository:ToDoRepository

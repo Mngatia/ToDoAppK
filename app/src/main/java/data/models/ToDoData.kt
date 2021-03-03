@@ -1,9 +1,11 @@
 package models
 
+import android.icu.text.CaseMap
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import models.Priority
+import kotlinx.android.parcel.Parcelize
+
 
 
 @Entity(tableName = "todo_table")
