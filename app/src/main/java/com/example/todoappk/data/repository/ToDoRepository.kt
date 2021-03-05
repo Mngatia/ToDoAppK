@@ -1,10 +1,9 @@
-package repository
+package com.example.todoappk.data.repository
 
 import androidx.lifecycle.LiveData
-import com.example.todoappk.ToDoDao
+import com.example.todoappk.data.ToDoDao
 //import models.ToDoDao
 import models.ToDoData
-import java.time.temporal.TemporalQuery
 
 class ToDoRepository (private val toDoDao: ToDoDao){
 

@@ -1,4 +1,4 @@
-package com.example.todoappk
+package com.example.todoappk.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

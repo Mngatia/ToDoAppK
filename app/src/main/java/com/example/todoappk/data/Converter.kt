@@ -1,4 +1,4 @@
-package com.example.todoappk
+package com.example.todoappk.data
 
 import androidx.room.TypeConverter
 import models.Priority

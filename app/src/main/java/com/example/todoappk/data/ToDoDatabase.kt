@@ -1,9 +1,8 @@
-package com.example.todoappk
+package com.example.todoappk.data
 
 import android.content.Context
 import androidx.room.*
 import models.ToDoData
-import java.security.AccessControlContext
 
 @Database(entities = [ToDoData::class], version = 1, exportSchema = false)
 @TypeConverters(Converter::class)
@@ -16,7 +15,7 @@ abstract class ToDoDatabase: RoomDatabase(){
         @Volatile
         private var INSTANCE: ToDoDatabase? = null
 
-        fun getDatabase(context: Context): ToDoDatabase{
+        fun getDatabase(context: Context): ToDoDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null){
                 return tempInstance

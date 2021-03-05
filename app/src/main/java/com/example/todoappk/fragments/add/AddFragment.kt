@@ -1,4 +1,4 @@
-package fragments.add
+package com.example.todoappk.fragments.add
 
 import android.os.Bundle
 import android.view.*
@@ -10,7 +10,7 @@ import com.example.todoappk.R
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 import models.ToDoData
-import viewmodel.ToDoViewModel
+import com.example.todoappk.data.viewmodel.ToDoViewModel
 
 class AddFragment : Fragment(){
 
