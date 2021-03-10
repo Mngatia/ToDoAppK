@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import com.example.todoappk.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import models.Priority
+import com.example.todoappk.data.models.Priority
 import models.ToDoData
 
 class BindingAdapters {

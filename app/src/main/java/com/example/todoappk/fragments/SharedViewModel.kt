@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.todoappk.R
-import models.Priority
+import com.example.todoappk.data.models.Priority
 import models.ToDoData
 import java.text.FieldPosition
 

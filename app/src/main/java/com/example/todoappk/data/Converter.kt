@@ -1,7 +1,7 @@
 package com.example.todoappk.data
 
 import androidx.room.TypeConverter
-import models.Priority
+import com.example.todoappk.data.models.Priority
 
 class Converter {
     @TypeConverter

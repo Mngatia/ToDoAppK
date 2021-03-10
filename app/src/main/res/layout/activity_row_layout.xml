@@ -8,7 +8,7 @@
     <data>
         <variable
             name="toDoDtata"
-            type="com.example.todoappk.models.ToDoData" />
+            type="com.example.todoappk.data.models.ToDoData" />
 
     </data>
 
@@ -52,7 +52,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:text="@{toDoData.title}"
-                android:textColor="@color/darkgrey"
+                android:textColor="@color/darkGray"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/priority_indicator"

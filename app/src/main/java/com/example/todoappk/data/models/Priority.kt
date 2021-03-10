@@ -1,4 +1,4 @@
-package models
+package com.example.todoappk.data.models
 
 enum class Priority {
     HIGH,

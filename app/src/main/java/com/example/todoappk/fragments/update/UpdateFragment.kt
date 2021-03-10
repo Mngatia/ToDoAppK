@@ -9,8 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.todoappk.R
+import com.example.todoappk.data.models.ToDoData
 import com.example.todoappk.data.viewmodel.ToDoViewModel
 import com.example.todoappk.databinding.FragmentUpdateBinding
+import com.example.todoappk.fragments.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_add.view.*
 import kotlinx.android.synthetic.main.fragment_update.*
 import models.ToDoData
