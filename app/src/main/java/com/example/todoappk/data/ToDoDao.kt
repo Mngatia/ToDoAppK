@@ -2,7 +2,7 @@ package com.example.todoappk.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import models.ToDoData
+import com.example.todoappk.data.models.ToDoData
 
 @Dao
 interface ToDoDao {

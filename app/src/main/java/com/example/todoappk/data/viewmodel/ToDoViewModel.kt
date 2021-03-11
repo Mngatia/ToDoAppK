@@ -5,9 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.todoappk.data.ToDoDatabase
+import com.example.todoappk.data.models.ToDoData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import models.ToDoData
 import com.example.todoappk.data.repository.ToDoRepository
 
 class ToDoViewModel (application: Application): AndroidViewModel(application){

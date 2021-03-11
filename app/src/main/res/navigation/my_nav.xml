@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.todoappk.fragments.list .ListFragment"
+        android:name="com.example.todoappk.fragments.list.ListFragment"
         android:label="ToDo List"
         tools:layout="@layout/fragment_list">
 

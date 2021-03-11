@@ -4,13 +4,15 @@ import android.view.View
 import android.widget.Spinner
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.ListFragment
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import com.example.todoappk.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.todoappk.data.models.Priority
-import models.ToDoData
+import com.example.todoappk.data.models.ToDoData
+import com.example.todoappk.fragments.list.ListFragmentDirections
+
 
 class BindingAdapters {
 
@@ -47,11 +49,11 @@ class BindingAdapters {
 
         @BindingAdapter("android:parsePriorityColor")
         @JvmStatic
-        fun parsePriorityColor(CardView: CardView, priority: Priority){
+        fun parsePriorityColor(cardView: CardView, priority: Priority){
             when(priority){
-                Priority.HIGH -> {cardView.setCardBackgroundColor(CardView.context.getColor(R.color.red))}
-                Priority.MEDIUM -> {cardView.setCardBackgroundColor(CardView.context.getColor(R.color.yellow))}
-                Priority.LOW -> {cardView.setCardBackgroundColor(CardView.context.getColor(R.color.green))}
+                Priority.HIGH -> { cardView.setCardBackgroundColor(cardView.context.getColor(R.color.red)) }
+                Priority.MEDIUM -> { cardView.setCardBackgroundColor(cardView.context.getColor(R.color.yellow)) }
+                Priority.LOW -> { cardView.setCardBackgroundColor(cardView.context.getColor(R.color.green)) }
             }
         }
         @BindingAdapter("android:sendDataToUpdateFragment")
