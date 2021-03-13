@@ -1,12 +1,14 @@
 package com.example.todoappk.fragments.list.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import models.ToDoData
+import com.example.todoappk.data.models.ToDoData
+
 
 class ToDoDiffUtil (
     private val oldList: List<ToDoData>,
     private val newList: List<ToDoData>
 ): DiffUtil.Callback() {
+
     override fun getOldListSize(): Int {
         return oldList.size
     }

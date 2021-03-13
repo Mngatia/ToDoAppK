@@ -25,8 +25,7 @@ class UpdateFragment :Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         //Data binding
@@ -70,7 +69,7 @@ class UpdateFragment :Fragment() {
             )
             mToDoViewModel.updateData(updatedItem)
             Toast.makeText(requireContext(), "Successfully updated!", Toast.LENGTH_SHORT).show()
-            //Navigat back
+            //Navigate back
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }else {
             Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_SHORT).show()
@@ -91,7 +90,7 @@ class UpdateFragment :Fragment() {
 
         builder.setNegativeButton("No"){_, _ ->}
         builder.setTitle("Delete '${args.currentItem.title}'?")
-        builder.setMessage("Are you sure you want to remove ${args.currentItem.title}?")
+        builder.setMessage("Are you sure you want to remove '${args.currentItem.title}'?")
         builder.create().show()
     }
 

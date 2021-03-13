@@ -11,11 +11,14 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.todoappk.R
+import com.example.todoappk.data.models.ToDoData
 import com.example.todoappk.databinding.FragmentListBinding
 import com.example.todoappk.fragments.list.adapter.ListAdapter
 import com.google.android.material.snackbar.Snackbar
-import models.ToDoData
 import com.example.todoappk.data.viewmodel.ToDoViewModel
+import com.example.todoappk.fragments.SharedViewModel
+import com.example.todoappk.utils.hideKeyboard
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
 class ListFragment  : Fragment(), SearchView.OnQueryTextListener {
 
@@ -31,14 +34,14 @@ class ListFragment  : Fragment(), SearchView.OnQueryTextListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         //Data binding
         _binding = FragmentListBinding.inflate(inflater, container, false)
-        binding.lifecyclerOwner = this
+        binding.lifecycleOwner = this
         binding.mSharedViewModel = mSharedViewModel
 
         //setup RecyclerView
-        setupRecyclerView()
+        setupRecyclerview()
 
         //observe livedata
         mToDoViewModel.getAllData.observe(viewLifecycleOwner, { data ->
@@ -53,7 +56,7 @@ class ListFragment  : Fragment(), SearchView.OnQueryTextListener {
         hideKeyboard(requireActivity())
         return binding.root
     }
-    private fun setupRecyclerView(){
+    private fun setupRecyclerview(){
         val recyclerView = binding.recyclerView
         recyclerView.adapter = adapter
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
@@ -72,7 +75,7 @@ class ListFragment  : Fragment(), SearchView.OnQueryTextListener {
                 //Delete Item
                 mToDoViewModel.deleteItem(deletedItem)
                 adapter.notifyItemRemoved(viewHolder.adapterPosition)
-                //Restore DEleted Item
+                //Restore Deleted Item
                 restoreDeletedData(viewHolder.itemView, deletedItem)
             }
         }
@@ -116,14 +119,14 @@ class ListFragment  : Fragment(), SearchView.OnQueryTextListener {
         return true
     }
 
-    override fun onQueryTextChange(newText: String?): Boolean {
+    override fun onQueryTextChange(query: String?): Boolean {
         if (query != null){
             searchTroughDatabase(query)
         }
         return true
     }
 
-    private fun searchTroughDatabase(query: String?) {
+    private fun searchTroughDatabase(query: String) {
         val searchQuery ="%$query%"
 
         mToDoViewModel.searchDatabase(searchQuery).observe(this, { list ->

@@ -38,11 +38,13 @@ abstract class ToDoDatabase: RoomDatabase(){
         @Volatile
         private var INSTANCE: ToDoDatabase? = null
 
-        fun getDatabase(context: Context): ToDoDatabase = INSTANCE ?: synchronized(this){
+        fun getDatabase(context: Context): ToDoDatabase =
+            INSTANCE ?: synchronized(this){
             INSTANCE ?: builDatabase(context).also { INSTANCE = it}
         }
 
-        private fun builDatabase(context: Context) = Room.databaseBuilder(context.applicationContext, ToDoDatabase::class.java,
+        private fun builDatabase(context: Context) =
+            Room.databaseBuilder(context.applicationContext, ToDoDatabase::class.java,
         "todo_database").build()
     }
 }
